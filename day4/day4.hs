@@ -41,9 +41,9 @@ getCard = map (\r -> zip r (repeat False))
 
 solvePart1 :: ([Int], [Card]) -> Int
 solvePart1 (x:xs, cs) | any hasBingo markedCards = getBingoValue x (head $ filter hasBingo markedCards)
-                    | otherwise = solvePart1 (xs, markedCards)
-                    where
-                        markedCards = map (markNumber x) cs
+                      | otherwise = solvePart1 (xs, markedCards)
+                      where
+                         markedCards = map (markNumber x) cs
 
 hasBingo :: Card -> Bool
 hasBingo c | any (all snd) c = True
