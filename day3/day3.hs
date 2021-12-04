@@ -25,7 +25,7 @@ readInputAndProcess filename processor = do
 readInput :: String -> [String]
 readInput = lines
 
-solvePart1 input = multi . toNum . foldl makeGamaEpsilonStrings ("", "") $ map (makeGamaEpsilonDigits . countBits) (transpose input)
+solvePart1 input = multi . toNum . foldl makeGamaEpsilonStrings ("", "") $ makeGamaEpsilonDigits . countBits <$> transpose input
     where makeGamaEpsilonStrings (g, e) (gd, ed) = (g ++ gd, e ++ ed)
           countBits str = ((length . filter (== '0')) str, (length . filter (== '1')) str)
           makeGamaEpsilonDigits (zeros,ones) = if zeros > ones then ("0","1") else ("1","0")
@@ -38,13 +38,13 @@ solvePart2 input = multi $ toNum (readO2 , readCO2)
 
 solvePart2Readings :: [String] -> Int -> [(Int, Int)] -> ((Int, Int) -> Char) -> [String]
 solvePart2Readings [x] pos mapping f = [x]
-solvePart2Readings input pos mapping f = 
-    let filtered = filter ff input in 
+solvePart2Readings input pos mapping f =
+    let filtered = filter ff input in
          solvePart2Readings filtered (pos + 1) (countBitsAll filtered) f
     where
           ff str = str!!pos == f (mapping!!pos)
 
-countBitsAll input = map countBits (transpose input)
+countBitsAll input = countBits <$> transpose input
     where
         countBits str = ((length . filter (== '0')) str, (length . filter (== '1')) str)
 

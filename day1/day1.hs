@@ -12,7 +12,7 @@ main = do
 
 
 readInts :: String -> [Int]
-readInts c = map read (lines c)
+readInts c = read <$> lines c
 
 readIntsAndProcess filename processor = do
     withFile filename ReadMode (\handle -> do

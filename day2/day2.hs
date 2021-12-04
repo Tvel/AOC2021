@@ -13,7 +13,7 @@ main = do
 data Direction = Forward | Down | Up deriving (Show)  
 
 readInput :: String -> [(Direction, Int)]
-readInput c =  map (parse .  words) (lines  c)
+readInput c = parse . words <$> lines  c
 
 parse :: [[Char]] -> (Direction, Int)
 parse [] = error ""
