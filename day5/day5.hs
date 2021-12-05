@@ -26,14 +26,17 @@ readInput input = (toCoord <$> (splitOn "," <$>)) . splitOn " -> " <$> lines inp
 toCoord :: [[String]] -> Vent
 toCoord [[x1,y1],[x2,y2]] = ((read x1, read y1), (read x2, read y2))
 
-solvePart1 i = length $ filter (\x -> length x > 1) $ group $ sort $ concat $ getCoordinatesStraightOnly <$> i
+solvePart1 = getCrossingsCount getCoordinatesStraightOnly
 
 getCoordinatesStraightOnly :: Vent -> [Coord]
 getCoordinatesStraightOnly ((x1,y1),(x2, y2)) | x1 == x2 = [(x1,y)| y <- [y1..y2]++[y2..y1]]
                                               | y1 == y2 = [(x,y1)| x <- [x1..x2]++[x2..x1]]
                                               | otherwise = []
 
-solvePart2 i = length $ filter (\x -> length x > 1) $ group $ sort $ concat $ getCoordinates <$> i
+getCrossingsCount :: (Vent -> [Coord]) -> [Vent] -> Int
+getCrossingsCount f input = length $ filter (\x -> length x > 1) $ group $ sort $ concat $ f <$> input
+
+solvePart2 = getCrossingsCount getCoordinates
 
 getCoordinates :: Vent -> [Coord]
 getCoordinates ((x1,y1),(x2, y2)) | x1 == x2 = [(x1,y)| y <- [y1..y2]++[y2..y1]]
