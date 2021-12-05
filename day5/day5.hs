@@ -46,6 +46,5 @@ getDiag :: Coord -> Coord -> [Coord]
 getDiag start@(x1,y1) (x2,y2) = getDiagCoords start len getYDir
     where len = abs (x1-x2)
           getYDir = if y1 < y2 then 1 else -1
-
-getDiagCoords c@(x,y) 0 _ = [c]
-getDiagCoords c@(x,y) len ydir = c : getDiagCoords (x+1,y+ydir) (len-1) ydir
+          getDiagCoords c@(x,y) 0 _ = [c]
+          getDiagCoords c@(x,y) len ydir = c : getDiagCoords (x+1,y+ydir) (len-1) ydir
