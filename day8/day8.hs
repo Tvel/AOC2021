@@ -4,7 +4,6 @@ import Data.List ( group, sort, find, findIndex )
 import Data.Set ( fromList )
 import qualified Data.Set as S
 import qualified Data.Map as M
-import qualified Text.XHtml as S
 
 main = do
     print "Part1_0"
