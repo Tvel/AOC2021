@@ -11,6 +11,7 @@ import qualified Day6
 import qualified Day7
 import qualified Day8
 import qualified Day9
+import qualified Day10
 
 someFunc :: IO ()
 someFunc = do 
@@ -23,3 +24,4 @@ someFunc = do
     Day7.main 
     Day8.main 
     Day9.main 
+    Day10.main 
