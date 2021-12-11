@@ -1,3 +1,5 @@
+module Day5 ( main ) where
+
 import System.IO
 import Data.List.Split ( splitOn )
 import Data.List ( group, sort )
@@ -6,14 +8,15 @@ type Coord = (Integer, Integer)
 type Vent = (Coord, Coord)
 
 main = do
+    print "----DAY 5----"
     print "Part1_0"
-    readInputAndProcess "input_0.txt" solvePart1
+    readInputAndProcess "inputs/day5/input_0.txt" solvePart1
     print "Part1"
-    readInputAndProcess "input_1.txt" solvePart1
+    readInputAndProcess "inputs/day5/input_1.txt" solvePart1
     print "Part2_0"
-    readInputAndProcess "input_0.txt" solvePart2
+    readInputAndProcess "inputs/day5/input_0.txt" solvePart2
     print "Part2"
-    readInputAndProcess "input_1.txt" solvePart2
+    readInputAndProcess "inputs/day5/input_1.txt" solvePart2
 
 readInputAndProcess filename processor = do
     withFile filename ReadMode (\handle -> do

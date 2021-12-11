@@ -1,19 +1,21 @@
+module Day3 ( main ) where
+
 import System.IO
-import Text.Html ( input )
 import Control.Applicative ()
 import Data.List ( transpose )
 import Numeric ( readInt )
 import Data.Char ( digitToInt )
 
 main = do
+    print "----DAY 3----"
     print "Part1_0"
-    readInputAndProcess "input_0.txt" solvePart1
+    readInputAndProcess "inputs/day3/input_0.txt" solvePart1
     print "Part1"
-    readInputAndProcess "input_1.txt" solvePart1
+    readInputAndProcess "inputs/day3/input_1.txt" solvePart1
     print "Part2_0"
-    readInputAndProcess "input_0.txt" solvePart2
+    readInputAndProcess "inputs/day3/input_0.txt" solvePart2
     print "Part2"
-    readInputAndProcess "input_1.txt" solvePart2
+    readInputAndProcess "inputs/day3/input_1.txt" solvePart2
 
 readInputAndProcess :: Show a => FilePath -> ([String] -> a) -> IO ()
 readInputAndProcess filename processor = do

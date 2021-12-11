@@ -1,14 +1,17 @@
+module Day1 ( main ) where
+
 import System.IO
 
 main = do
+    print "----DAY 1----"
     print "Part1_0"
-    readIntsAndProcess "input_0.txt" (snd . solvePart1)
+    readIntsAndProcess "inputs/day1/input_0.txt" (snd . solvePart1)
     print "Part1"
-    readIntsAndProcess "input_1.txt" (snd . solvePart1)
+    readIntsAndProcess "inputs/day1/input_1.txt" (snd . solvePart1)
     print "Part2_0"
-    readIntsAndProcess "input_0.txt" (snd . solvePart2)
+    readIntsAndProcess "inputs/day1/input_0.txt" (snd . solvePart2)
     print "Part2"
-    readIntsAndProcess "input_1.txt" (snd . solvePart2)
+    readIntsAndProcess "inputs/day1/input_1.txt" (snd . solvePart2)
 
 
 readInts :: String -> [Int]

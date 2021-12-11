@@ -1,3 +1,5 @@
+module Day7 ( main ) where
+
 import System.IO
 import Text.Parsec
 import qualified Data.IntMap as M
@@ -5,15 +7,16 @@ import Data.IntMap ((!?))
 import Data.Either ( fromRight )
 import qualified Data.Maybe
 
-main = do
+main = do    
+    print "----DAY 7----"
     print "Part1_0"
-    readInputAndProcess "input_0.txt" solvePart1
+    readInputAndProcess "inputs/day7/input_0.txt" solvePart1
     print "Part1"
-    readInputAndProcess "input_1.txt" solvePart1
+    readInputAndProcess "inputs/day7/input_1.txt" solvePart1
     print "Part2_0"
-    readInputAndProcess "input_0.txt" solvePart2
+    readInputAndProcess "inputs/day7/input_0.txt" solvePart2
     print "Part2"
-    readInputAndProcess "input_1.txt" solvePart2
+    readInputAndProcess "inputs/day7/input_1.txt" solvePart2
 
 readInputAndProcess filename processor = do
     withFile filename ReadMode (\handle -> do

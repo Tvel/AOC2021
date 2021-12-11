@@ -1,14 +1,17 @@
+module Day2 ( main ) where
+
 import System.IO
 
 main = do
+    print "----DAY 2----"
     print "Part1_0"
-    readInputAndProcess "input_0.txt" solvePart1
+    readInputAndProcess "inputs/day2/input_0.txt" solvePart1
     print "Part1"
-    readInputAndProcess "input_1.txt" solvePart1
+    readInputAndProcess "inputs/day2/input_1.txt" solvePart1
     print "Part2_0"
-    readInputAndProcess "input_0.txt" solvePart2
+    readInputAndProcess "inputs/day2/input_0.txt" solvePart2
     print "Part2"
-    readInputAndProcess "input_1.txt" solvePart2
+    readInputAndProcess "inputs/day2/input_1.txt" solvePart2
 
 data Direction = Forward | Down | Up deriving (Show)  
 

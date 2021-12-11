@@ -1,3 +1,5 @@
+module Day4 ( main ) where
+
 import System.IO
 import Data.List.Split ( splitOn )
 import Data.List ( transpose )
@@ -5,14 +7,15 @@ import Data.List ( transpose )
 type Card = [[(Int,Bool)]]
 
 main = do
+    print "----DAY 4----"
     print "Part1_0"
-    readInputAndProcess "input_0.txt" solvePart1
+    readInputAndProcess "inputs/day4/input_0.txt" solvePart1
     print "Part1"
-    readInputAndProcess "input_1.txt" solvePart1
+    readInputAndProcess "inputs/day4/input_1.txt" solvePart1
     print "Part2_0"
-    readInputAndProcess "input_0.txt" solvePart2
+    readInputAndProcess "inputs/day4/input_0.txt" solvePart2
     print "Part2"
-    readInputAndProcess "input_1.txt" solvePart2
+    readInputAndProcess "inputs/day4/input_1.txt" solvePart2
 
 readInputAndProcess :: Show a => FilePath -> (([Int], [Card]) -> a) -> IO ()
 readInputAndProcess filename processor = do
